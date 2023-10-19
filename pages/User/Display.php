@@ -49,12 +49,13 @@ if (isset($_SESSION['UNAME']) == false) {
     <ul>
       <li><a href="../../">Home</a></li>
       <li><a href="./Contactus.php">Contact</a></li>
-      <li><a href="#">Login</a></li>
+      <li style='color:#eee;'><a><?php echo $_SESSION['UNAME']; ?><a></li>
+      <li><a href="../Login/logout.php">LOGOUT</a></li>
     </ul>
   </nav> 
 </div>
 <div class="menu-bg" id="menu-bg"></div>
-<script src="../java/script.js"></script>
+<script src="../../java/script.js"></script>
 <!--hamburger menu button end-->
 
 <!--icon back-->

@@ -35,7 +35,7 @@ $result = $con->query($sql) or die($con->error);
     else{
         $res=mysqli_query($con,
         "INSERT INTO `login`(`email`, `username`, `password`,`Role`) VALUES ('$email','$username','$password','$role')");
-            header('location:index.php');
+            header('location:./');
         die();
     }
 }

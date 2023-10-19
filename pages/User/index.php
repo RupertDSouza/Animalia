@@ -10,10 +10,11 @@ if (isset($_SESSION['UNAME'])==false) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../../style/style.css?v=201023.1.9">
+<link rel="stylesheet" href="../../style/style.css">
 <script src="../../java/script.js"></script>
-<link rel="stylesheet" href="../../style/animal-grid.css?v=201023.1.9 ">
+<link rel="stylesheet" href="../../style/animal-grid.css">
 <link rel="stylesheet" href="../../style/search-bar-pages.css">
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
    .click{
@@ -58,7 +59,7 @@ if (isset($_SESSION['UNAME'])==false) {
   <nav class="nav" id="nav">
     <ul>
       <li><a href="../../">Home</a></li>
-      <li><a href="../User/Contactus.php">Contact</a></li>
+      <li><a href="./Contactus.php">Contact</a></li>
       <li style='color:#eee;'><a><?php echo $_SESSION['UNAME']; ?><a></li>
       <li><a href="../Login/logout.php">LOGOUT</a></li>
     </ul>
@@ -70,7 +71,7 @@ if (isset($_SESSION['UNAME'])==false) {
 <!--grid-->
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+    <!-- <div class="flex flex-wrap -mx-4 -mb-10 text-center"> -->
 
   <?php
             
@@ -118,7 +119,7 @@ if (isset($_SESSION['UNAME'])==false) {
             $con->close(); 
           }
 ?>
-</div>
+<!-- </div> -->
         </div>
         </section>
 <!--end grid-->

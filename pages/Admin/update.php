@@ -1,7 +1,7 @@
 <?php 
-require('../db.conn.php');
+require('../../db.conn.php');
 if (isset($_SESSION['UNAME'])==false) {
-  header('location:../login.php');
+  header('location:../Login/');
   die();
 }
 ?>
@@ -17,28 +17,28 @@ if (isset($_SESSION['UNAME'])==false) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../style/upload.css">
-    <link rel="stylesheet" href="../style/search-bar-pages.css">
+    <link rel="stylesheet" href="../../style/upload.css">
+    <link rel="stylesheet" href="../../style/search-bar-pages.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../java/script.js"></script>
-    <link rel="stylesheet" href="../style/style.css">
+    <script src="../../java/script.js"></script>
+    <link rel="stylesheet" href="../../style/style.css">
+    
   
 </head>
 <body>
 <!-- Image and text -->
 <nav class="navbar navbar-light ">
-    <a class="navbar-brand" href="../Index.php">
-      <img src="../images/lo.png" width="280" height="100" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand" href="./">
+      <img src="../../images/lo.png" width="280" height="100" class="d-inline-block align-top" alt="">
       
     </a>
   </nav>
   <!--logo end-->
   <form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-    <fieldset class="input-box">
-      <i class="uil uil-search"></i>
-        <input type="text" name="input" placeholder="Search here..." />
-        <button type="submit" name="search" class="button">Search</button>
-    </fieldset>
+    <div class="search-box">
+      <input class="search-input" type="text" name="input" placeholder="Search something..">
+      <button class="search-btn" type="submit" name="search"><i class="fas fa-search"></i></button>
+    </div>
   </form>
 <!--hamburger menu button-->
 <div id="menu">
@@ -49,10 +49,10 @@ if (isset($_SESSION['UNAME'])==false) {
     </div>
     <nav class="nav" id="nav">
       <ul>
-        <li><a href="../Index.php">Home</a></li>
-        <li><a href="./adminh.php">Admin</a></li>
+        <li><a href="../../">Home</a></li>
+        <li><a href="./">Admin</a></li>
         <li style='color:#eee;'><a><?php echo $_SESSION['UNAME']; ?><a></li>
-        <li><a id="logoutBtn"  href="../logout.php">Logout</a></li>
+        <li><a id="logoutBtn"  href="../Login/logout.php">Logout</a></li>
       </ul>
     </nav> 
   </div>
@@ -98,7 +98,7 @@ if (isset($_SESSION['UNAME'])==false) {
                                     <!-- Browse Image to Upload Wrapper -->
                                     <div class="avatar-selector">
                                         <a href="#" class="avatar-selector-btn">
-                                            <img src="../images/camera.svg" alt="cam">
+                                            <img src="../../images/camera.svg" alt="cam">
                                         </a>
                                         <input type="file"  accept="image/*"    name="image" >
                                     </div>
@@ -117,13 +117,13 @@ if (isset($_SESSION['UNAME'])==false) {
                               </div>
                               <button type="submit" name="button" class="btn btn-outline" style="color: #eee; background:#DC5F00;" ><b>Submit</b></button>
                               <?php } else{ ?>
-                                        <img src="../images/default-avatar.png" alt="AvatarInput">
+                                        <img src="../../images/default-avatar.png" alt="AvatarInput">
                                     </div>
                                     <!-- Image Preview Wrapper -->
                                     <!-- Browse Image to Upload Wrapper -->
                                     <div class="avatar-selector">
                                         <a href="#" class="avatar-selector-btn">
-                                            <img src="../images/camera.svg" alt="cam">
+                                            <img src="../../images/camera.svg" alt="cam">
                                         </a>
                                         <!-- <input type="file" name="image" accept="image/*" > -->
                                     </div>
@@ -146,7 +146,7 @@ if (isset($_SESSION['UNAME'])==false) {
             </div>
         </div>
     </div>
-    <script src="../java/upload.js"></script>
+    <script src="../../java/upload.js"></script>
     </form>
 <!-- end image -->
 <?php

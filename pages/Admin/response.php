@@ -1,7 +1,7 @@
 <?php
-require('../db.conn.php');
+require('../../db.conn.php');
 if (isset($_SESSION['UNAME']) == false) {
-    header('location:../login.php');
+    header('location:../Login/');
     die();
   }
 ?>
@@ -10,19 +10,19 @@ if (isset($_SESSION['UNAME']) == false) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../../style/style.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../style/style.css">
-<script src="../java/script.js"></script>
+<link rel="stylesheet" href="../../style/style.css">
+<script src="../../java/script.js"></script>
 </head>
 <body>
 <!--logo-->
 <!-- Image and text -->
 <nav class="navbar navbar-light ">
   <a class="navbar-brand" href="../Index.php">
-    <img src="../images/lo.png" width="280" height="50" class="d-inline-block align-top" alt="">
+    <img src="../../images/lo.png" width="280" height="50" class="d-inline-block align-top" alt="">
 </a>
 </nav>
 <!--logo end-->
@@ -36,14 +36,14 @@ if (isset($_SESSION['UNAME']) == false) {
   </div>
   <nav class="nav" id="nav">
     <ul>
-      <li><a href="../Index.php">Home</a></li>
-      <li><a href="./contactus.php">Contact</a></li>
+      <li><a href="../../">Home</a></li>
+      <li><a href="./insert.php">Insert</a></li>
       <li><a href="#">Login</a></li>
     </ul>
   </nav> 
 </div>
 <div class="menu-bg" id="menu-bg"></div>
-<script src="./java/script.js"></script>
+<script src="../../java/script.js"></script>
 <!--hamburger menu button end-->
 <!-- response -->
 <br>
