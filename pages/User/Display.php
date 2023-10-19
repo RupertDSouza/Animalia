@@ -1,7 +1,7 @@
 <?php
-require('../db.conn.php');
+require('../../db.conn.php');
 if (isset($_SESSION['UNAME']) == false) {
-  header('location:../login.php');
+  header('location:../Login');
   die();
 }
 ?>
@@ -10,11 +10,11 @@ if (isset($_SESSION['UNAME']) == false) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./style/style.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="../../style/style.css?v=201023.1.48">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="../style/bird-gird.css">
+<link rel="stylesheet" href="../../style/bird-gird.css">
 
 </head>
 <body class="p-4 m-0 border-0 bd-example">
@@ -32,14 +32,14 @@ if (isset($_SESSION['UNAME']) == false) {
 <!-- Image and text -->
 <section>
 <nav class="navbar navbar-light bg"> 
-  <a class="navbar-brand" href="../Index.php">
-    <img src="../images/lo.png" width="250" height="40" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="../../">
+    <img src="../../images/lo.png" width="250" height="40" class="d-inline-block align-top" alt="">
     
   </a> </nav> 
 </section>
 <!--logo end-->
 <!--hamburger menu button-->
-<!--<div id="menu">
+<div id="menu">
   <div id="menu-bar" onclick="menuOnClick()">
     <div id="bar1" class="bar"></div>
     <div id="bar2" class="bar"></div>
@@ -47,21 +47,21 @@ if (isset($_SESSION['UNAME']) == false) {
   </div>
   <nav class="nav" id="nav">
     <ul>
-      <li><a href="../Index.html">Home</a></li>
-      <li><a href="../pages/contactus.html">Contact</a></li>
+      <li><a href="../../">Home</a></li>
+      <li><a href="./Contactus.php">Contact</a></li>
       <li><a href="#">Login</a></li>
     </ul>
   </nav> 
 </div>
 <div class="menu-bg" id="menu-bg"></div>
-<script src="../java/script.js"></script>-->
+<script src="../java/script.js"></script>
 <!--hamburger menu button end-->
 
 <!--icon back-->
 <nav aria-label="breadcrumb" style="color: #eee;;" >
   <ol class="breadcrumb" style="color: #DC5F00;">
-    <li class="breadcrumb-item"><a href="../Index.php">Home</a></li>
-    <li class="breadcrumb-item"><a href="../pages/Animals.php">Animals</a></li>
+    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+    <li class="breadcrumb-item"><a href="../User">Animals</a></li>
     <li class="breadcrumb-item active aria-current="page" style= "color: #eee;"><?php echo $row['name']; ?></li>
   </ol>
 </nav>

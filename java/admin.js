@@ -13,23 +13,23 @@ const app = new Vue({
     postList: [
     new Post(
     'Add',
-    '../pages/insert.php',
+    '../Admin/insert.php',
 
     'https://www.svgrepo.com/show/475030/add-image.svg'),
 
     new Post(
     'List',
-    '../index.php',
+    '../User/',
     'https://www.svgrepo.com/show/485395/file.svg'),
 
     new Post(
       'Update',
-      '../pages/update.php',
+      '../Admin/update.php',
       'https://www.svgrepo.com/show/132898/update.svg'),
     
     new Post(
       'Suggestion',
-      '../pages/response.php',
+      '../Admin/response.php',
       'https://www.svgrepo.com/show/375789/contacts.svg')] },
 
 

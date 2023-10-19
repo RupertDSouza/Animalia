@@ -1,7 +1,7 @@
 <?php
-require('../db.conn.php');
+require('../../db.conn.php');
 if (isset($_SESSION['UNAME'])==false) {
-  header('location:../login.php');
+  header('location:../Login');
   die();
 }
 ?>
@@ -10,10 +10,10 @@ if (isset($_SESSION['UNAME'])==false) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../style/style.css?v=<?php echo time(); ?>">
-<script src="../java/script.js"></script>
-<link rel="stylesheet" href="../style/animal-grid.css?v=<?php echo time(); ?>">
-<link rel="stylesheet" href="../style/search-bar-pages.css">
+<link rel="stylesheet" href="../../style/style.css?v=201023.1.9">
+<script src="../../java/script.js"></script>
+<link rel="stylesheet" href="../../style/animal-grid.css?v=201023.1.9 ">
+<link rel="stylesheet" href="../../style/search-bar-pages.css">
 
 <style>
    .click{
@@ -32,8 +32,8 @@ if (isset($_SESSION['UNAME'])==false) {
 <!--logo-->
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="../Index.php">
-    <img src="../images/lo.png" width="280" height="80" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="../../">
+    <img src="../../images/lo.png" width="280" height="80" class="d-inline-block align-top" alt="">
     
   </a>
 </nav>
@@ -41,11 +41,10 @@ if (isset($_SESSION['UNAME'])==false) {
 
  <!--search-->
 
-  <form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-    <div class="input-box">
-      <i class="uil uil-search"></i>
-        <input type="text" name="input" placeholder="Search here..." />
-        <button type="submit" name="search" class="button">Search</button>
+ <form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
+    <div class="search-box">
+      <input class="search-input" type="text" name="input" placeholder="Search something..">
+      <button class="search-btn" type="submit" name="search"><i class="fas fa-search"></i></button>
     </div>
   </form>
  <!-- END search -->
@@ -58,10 +57,10 @@ if (isset($_SESSION['UNAME'])==false) {
   </div>
   <nav class="nav" id="nav">
     <ul>
-      <li><a href="../Index.php">Home</a></li>
-      <li><a href="../pages/contactus.html">Contact</a></li>
+      <li><a href="../../">Home</a></li>
+      <li><a href="../User/Contactus.php">Contact</a></li>
       <li style='color:#eee;'><a><?php echo $_SESSION['UNAME']; ?><a></li>
-      <li><a href="../logout.php">LOGOUT</a></li>
+      <li><a href="../Login/logout.php">LOGOUT</a></li>
     </ul>
   </nav> 
 </div>
@@ -69,14 +68,16 @@ if (isset($_SESSION['UNAME'])==false) {
 
 <!--hamburger menu button end-->
 <!--grid-->
-<div class="image-grid">
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
 
   <?php
             
 // this header is put here to avoid error hearder sent before ...
             if(isset($_POST['newimage'])) {
               $_SESSION['id']= $_POST['newimage'];
-              header("Location:monkey.php");
+              header("Location:Display.php");
               die();
               }
               
@@ -118,7 +119,8 @@ if (isset($_SESSION['UNAME'])==false) {
           }
 ?>
 </div>
-
+        </div>
+        </section>
 <!--end grid-->
 <!--java script for hover-->
 <script>

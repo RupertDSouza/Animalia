@@ -5,7 +5,7 @@ require('db.conn.php');
     $input = $_POST['input'];
     $query="SELECT * FROM Animal where name LIKE '%$input%' UNION SELECT * FROM Bird where name LIKE '%$input%' UNION SELECT * FROM Insect where name LIKE '%$input%' ";
     $_SESSION['input']=$query;
-    header('Location:./pages/Animals.php');
+    header('Location:./pages/User');
         die();
   }
 
@@ -15,119 +15,29 @@ require('db.conn.php');
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./style/style.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="./style/style.css?v=201023.1.9">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="./style/search-bar-page.css">
-<link rel="stylesheet" href="./style/cards.css">
+<link rel="stylesheet" href="./style/search-bar-pages.css">
+<!-- <link rel="stylesheet" href="./style/cards.css"> -->
 
-<style>
-  .search-box {
-  width: 850px;
-  position: relative;
-  display: flex;
-	bottom: 0;
-	left: 0;
-	right: 0;
-    top:25px;
-	margin: auto;
-}
-
-.search-input {
-  width: 100%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  padding: 12px 45px 12px 12px;
-  background-color: #eaeaeb;
-  color: #6c6c6c;
-  border-radius: 10px;
-  border:none;
-  transition: all .4s;
-}
-
-.search-input:focus {
-  border:none;
-  outline:none;
-  box-shadow: 0 1px 12px #FF8400;
-  -moz-box-shadow: 0 1px 12px #FF8400;
-  -webkit-box-shadow: 0 1px 12px #FF8400;
-}
-
-.search-btn {
-  background-color: transparent;
-  font-size: 18px;
-  padding: 6px 9px;
-  margin-left:-45px;
-  border:none;
-  color: #FF8400;
-  transition: all .4s;
-  z-index: 10;
-}
-
-.search-btn:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-  color: black;
-}
-
-.search-btn:focus {
-  outline:none;
-  color:black;
-}
-
-.fas{
-  color: #FF8400;
-}
-@media screen and (max-width: 1050px) {
-.search-box{
-  width:550px;
-  top:50px;
-}
-.search-btn {
-    z-index:0;
-}
-}
-@media screen and (max-width: 650px) {
-.search-box{
-  width:400px;
-  top:50px;
-}
-.search-btn {
-    z-index:0;
-}
-}
-@media screen and (max-width: 400px) {
-.search-box{
-  width:350px;
-  top:50px;
-}
-.search-btn {
-    z-index:0;
-}
-}
-  </style>
 </head>
 <body>
 <script src="https://kit.fontawesome.com/d97b87339f.js" crossorigin="anonymous"></script>
 <!--logo-->
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="../Index.php">
+  <a class="navbar-brand">
     <img src="./images/lo.png" width="250" height="40" class="d-inline-block align-top" alt="">
 </a>
 </nav>
 <!--logo end-->
   <!--search-->
   <form method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-    <!-- <fieldset class="input-box">
-      <i class="uil uil-search"></i>
-        <input type="text" name="input" placeholder="Search here..." />
-        <button type="submit" name="search" class="button">Search</button>
-    </fieldset> -->
     <div class="search-box">
-  <input class="search-input" type="text" name="input" placeholder="Search something..">
-  <button class="search-btn" type="submit" name="search"><i class="fas fa-search"></i></button>
-</div>
+      <input class="search-input" type="text" name="input" placeholder="Search something..">
+      <button class="search-btn" type="submit" name="search"><i class="fas fa-search"></i></button>
+    </div>
   </form>
 <!-- END search -->
 <!--hamburger menu button-->
@@ -141,17 +51,17 @@ require('db.conn.php');
   <nav class="nav" id="nav">
     <ul>
       <?php if(isset($_SESSION['ROLE']) && $_SESSION['ROLE']==1){ ?>
-      <li><a href="./pages/adminh.php">Home</a></li> 
+      <li><a href="./pages/Admin">Home</a></li> 
       <?php } else {?>
-      <li><a href="./Index.php">Home</a></li> 
+      <li><a href="./">Home</a></li> 
       <?php } ?>
-      <li><a href="./pages/contactus.php">Contact</a></li>
+      <li><a href="./pages/User/Contactus.php">Contact</a></li>
       <?php 
             if(isset($_SESSION['UNAME'])){ ?>
               <li style='color:#eee;'><?php echo $_SESSION['UNAME']; ?></li>
-              <li><button class="log" onClick="location.href='logout.php'">LOGOUT</a></button></li>
+              <li><button class="log" onClick="location.href='./pages/Login/logout.php'">LOGOUT</a></button></li>
         <?php }else{ $_SESSION['NAME'] = "";?>
-                <li><button class="log" onClick="location.href='login.php'">LOGIN</button></li>
+                <li><button class="log" onClick="location.href='./pages/Login/'">LOGIN</button></li>
         <?php } ?>
     </ul>
   </nav> 
@@ -170,7 +80,7 @@ require('db.conn.php');
 
             if(isset($_POST['new'])) {
               $_SESSION['name']= $_POST['new'];
-              header("Location:./pages/Animals.php");
+              header("Location:./pages/User");
               die();
               }
 

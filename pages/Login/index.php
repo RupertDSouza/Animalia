@@ -1,7 +1,7 @@
 <?php
-require('db.conn.php');
+require('../../db.conn.php');
 if (isset($_SESSION['UNAME'])==true) {
-    header('location:./index.php');
+    header('location:../../');
     die();
   }
 //$_SESSION['logged_in'] = 0;
@@ -35,7 +35,7 @@ $result = $con->query($sql) or die($con->error);
     else{
         $res=mysqli_query($con,
         "INSERT INTO `login`(`email`, `username`, `password`,`Role`) VALUES ('$email','$username','$password','$role')");
-            header('location:login.php');
+            header('location:index.php');
         die();
     }
 }
@@ -61,9 +61,9 @@ elseif(isset($_POST['username']) && isset($_POST['password'])){
             $_SESSION['logged_in']=1;
             if($_SESSION['ROLE']==1){
                 print_r($_SESSION['ROLE']);
-                header('location:./pages/adminh.php');
+                header('location:../Admin/');
             }else{
-                header('location:Index.php');
+                header('location:../../');
             }
             die();      
         }else{
@@ -79,14 +79,14 @@ elseif(isset($_POST['username']) && isset($_POST['password'])){
         $con->close();
     }
 ?>
+
 <html>
 
 <head>
     <title>Login-Animalia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="KOGO Title Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./style/style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="loginstyles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../style/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../style/loginstyles.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -96,8 +96,8 @@ elseif(isset($_POST['username']) && isset($_POST['password'])){
 <!--logo-->
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="./Index.php">
-    <img src="./images/lo.png" width="280" height="100" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="../../">
+    <img src="../../images/lo.png" width="280" height="100" class="d-inline-block align-top" alt="">
     
   </a>
 </nav>
@@ -112,15 +112,15 @@ elseif(isset($_POST['username']) && isset($_POST['password'])){
   </div>
   <nav class="nav" id="nav">
     <ul>
-      <li><a href="../Index.php">Home</a></li>
-      <li><a href="./pages/contactus.php">Contact</a></li>
+      <li><a href="../../">Home</a></li>
+      <li><a href="../User/Contactus.php">Contact</a></li>
     </ul>
   </nav> 
 </div>
 <div class="menu-bg" id="menu-bg"></div>
 
 <!--hamburger menu button end-->
-<script src="./java/script.js"></script>
+<script src="../../java/script.js"></script>
 
     <div class="login-page">
         <div class="form">

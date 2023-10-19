@@ -1,7 +1,7 @@
 <?php
-require('../db.conn.php');
+require('../../db.conn.php');
 if (isset($_SESSION['UNAME']) == false) {
-    header('location:../login.php');
+    header('location:../Login/');
     die();
   }
 ?>
@@ -10,20 +10,20 @@ if (isset($_SESSION['UNAME']) == false) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../../style/style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
 
-<script src="../java/script.js"></script>
+<script src="../../java/script.js"></script>
 </head>
 <body>
 <!--logo-->
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="../Index.php">
-    <img src="../images/lo.png" width="280" height="50" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="../../">
+    <img src="../../images/lo.png" width="280" height="50" class="d-inline-block align-top" alt="">
 </a>
 </nav>
 <!--logo end-->
@@ -37,15 +37,15 @@ if (isset($_SESSION['UNAME']) == false) {
   </div>
   <nav class="nav" id="nav">
     <ul>
-      <li><a href="../Index.php">Home</a></li>
-      <li><a href="./contactus.php">Contact</a></li>
+      <li><a href="../../">Home</a></li>
+      <li><a href="">Contact</a></li>
       <li style='color:#eee;'><a><?php echo $_SESSION['UNAME']; ?><a></li>
-      <li><a href="../logout.php">LOGOUT</a></li>
+      <li><a href="../Login/logout.php">LOGOUT</a></li>
     </ul>
   </nav> 
 </div>
 <div class="menu-bg" id="menu-bg"></div>
-<script src="./java/script.js"></script>
+<script src="../../java/script.js"></script>
 <!--hamburger menu button end-->
 <!-- contact us -->
 <section class="text-gray-600 body-font relative">
@@ -80,8 +80,8 @@ if (isset($_SESSION['UNAME']) == false) {
           </div>
         </form>
           <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <a class="text-500"style="color: #DC5F00">anetish@gmail.com</a>
-            <p class="leading-normal my-5">Anet Taj and Anish Rubert
+            <!-- <a class="text-500"style="color: #DC5F00">anish@gmail.com</a> -->
+            <p class="leading-normal my-5">Anet Taj and Anish Rupert
               <br>St.Joseph Engineering Collage
             </p>
             <span class="inline-flex">
